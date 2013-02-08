@@ -1,4 +1,4 @@
-jquery-colorchange-js
+jquery-colorchange.js
 =====================
 
 jQuery plugin for simple, random color changing on text.
