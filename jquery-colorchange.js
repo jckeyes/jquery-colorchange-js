@@ -18,7 +18,7 @@
 
     var ColorPart = function(value, maxValue, minValue, maxModifier) {
 
-		var _self = this;
+        var _self = this;
 
         var _generateModifier = function() {
             var max = maxModifier + 1;
@@ -55,14 +55,14 @@
 
     $.fn.colorChange = function(options) {
 
-		var _options = $.extend({
+        var _options = $.extend({
             maxValue: 255,
             minValue: 0,
             maxModifier: 3,
-			interval: 200,
-			r: 0,  g: 0,  b: 0
+            interval: 200,
+            r: 0,  g: 0,  b: 0
         }, options);
-	
+    
         var target = $(this);
 
         var color = {
@@ -81,7 +81,7 @@
             });
         };
 
-		setInterval(setColor, _options.interval);
+        setInterval(setColor, _options.interval);
     };
 
 })(jQuery);
