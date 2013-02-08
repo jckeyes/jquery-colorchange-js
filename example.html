@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jquery-colorchange.js</title>
+	
+	<style type="text/css">
+		body { padding: 50px; font-family: sans-serif; }
+		h1 { font-size: 60px; margin-bottom: 10px; }
+		pre { font-size: 15px; color: #777; }
+		.color-1 { rgb(75, 255, 12); }
+		.color-5 { rgb(255, 255, 12); }
+	</style>
+	
+	<script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="jquery-colorchange.js"></script>
+	<script type="text/javascript">
+	$(function() {
+	
+		$('.color-1').colorChange({r:75, g:255, b:12});
+		$('.color-2').colorChange({interval: 20});
+		$('.color-3').colorChange({maxModifier: 100});
+		$('.color-4').colorChange({maxValue: 120, minValue: 100});
+		$('.color-5').colorChange({r:255, g:255, b:12, interval: 75, maxModifier: 50, maxValue: 200, minValue: 100});
+	
+	});
+	</script>
+	
+</head>
+<body>
+
+	<h1>Set the <span class="color-1">starting color</span></h1>
+	<pre>$('.color-1').colorChange({r:75, g:255, b:12});</pre>
+	<h1>Set the <span class="color-2">speed</span></h1>
+	<pre>$('.color-2').colorChange({interval: 20});</pre>
+	<h1>Set the <span class="color-3">variance</span></h1>
+	<pre>$('.color-3').colorChange({maxModifier: 100});</pre>
+	<h1>Set the <span class="color-4">range</span></h1>
+	<pre>$('.color-4').colorChange({maxValue: 120, minValue: 100});</pre>
+	<h1>Set them <span class="color-5">all</span></h1>
+	<pre>$('.color-5').colorChange({r:255, g:255, b:12, interval: 75, maxModifier: 50, maxValue: 200, minValue: 100});</pre>
+
+</body>
+</html>

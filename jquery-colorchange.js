@@ -16,17 +16,12 @@
 
 (function($) {
 
-    var ColorPart = function(value, options) {
-        var _options = $.extend({
-            maxValue: 255,
-            minValue: 0,
-            maxModifier: 3
-        }, options);
+    var ColorPart = function(value, maxValue, minValue, maxModifier) {
 
-        var _self = this;
+		var _self = this;
 
         var _generateModifier = function() {
-            var max = _options.maxModifier + 1;
+            var max = maxModifier + 1;
             return Math.floor(Math.random() * max) + 1;
         };
 
@@ -42,15 +37,15 @@
 
             if (_self.increment) {
                 _self.value += modifier;
-                if (_self.value >= _options.maxValue) {
-                    _self.value = _options.maxValue;
+                if (_self.value >= maxValue) {
+                    _self.value = maxValue;
                     _self.increment = false;
                 }
             }
             else {
                 _self.value -= modifier;
-                if (_self.value <= _options.minValue) {
-                    _self.value = _options.minValue;
+                if (_self.value <= minValue) {
+                    _self.value = minValue;
                     _self.increment = true;
                 }
             }
@@ -60,12 +55,20 @@
 
     $.fn.colorChange = function(options) {
 
+		var _options = $.extend({
+            maxValue: 255,
+            minValue: 0,
+            maxModifier: 3,
+			interval: 200,
+			r: 0,  g: 0,  b: 0
+        }, options);
+	
         var target = $(this);
 
         var color = {
-            r: new ColorPart(options.r, options),
-            g: new ColorPart(options.g, options),
-            b: new ColorPart(options.b, options)
+            r: new ColorPart(_options.r, _options.maxValue, _options.minValue, _options.maxModifier),
+            g: new ColorPart(_options.g, _options.maxValue, _options.minValue, _options.maxModifier),
+            b: new ColorPart(_options.b, _options.maxValue, _options.minValue, _options.maxModifier)
         };
 
         var setColor = function() {
@@ -78,7 +81,7 @@
             });
         };
 
-        setInterval(setColor, 200);
+		setInterval(setColor, _options.interval);
     };
 
 })(jQuery);
