@@ -6,8 +6,9 @@ jQuery plugin for simple, random color changing on text.
 Usage
 ------
 
-$('#selector').colorChange();
-$('#selector').colorChange({ r: 100, g: 100, b: 100 });
+    $('#selector').colorChange();
+
+    $('#selector').colorChange({ r: 100, g: 100, b: 100 });
 
 Available Options
 ------------------
