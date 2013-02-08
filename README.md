@@ -3,11 +3,12 @@ jquery-colorchange.js
 
 jQuery plugin for simple, random color changing on text.
 
+[Demo](http://slides.johnckeyes.com/2013/jquery-colorchange-js/example.html)
+
 Usage
 ------
 
     $('#selector').colorChange();
-
     $('#selector').colorChange({ r: 100, g: 100, b: 100 });
 
 Available Options
